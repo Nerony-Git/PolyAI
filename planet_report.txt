@@ -1,0 +1,25 @@
+1. Write down your brief thoughts on how you approached this problem.
+Answer:
+In other to solve the planet problem, I had to use the mathematical algorithms I have studied so far
+to finding the safest and shortest path for Mr. Little Z to teleport from Earth to planet Zearth.
+I used Kruskal's Algorithm to find the number of teleportation stations which the aliens had built
+all throughout space and Dijkstra's Algorithm to find the safest and shortest path for Mr. Little Z
+to teleport from Earth to planet Zearth.
+I created a class Graph and used Kruskal's Algorithm to find the minimum spanning tree (MST)
+of the connected and undirected graph and sorted the edges in ascending order according to the edge size.
+I then picked the smallest edge and check if it forms a cycle with the spanning tree I have formed so far.
+If a cycle is not formed, I include the edge else I discard it. I then repeat this until there are n - 1 edges
+in the spanning tree.
+I also adopted the union-find algorithm whereby I used the union by rank technique to attach smaller depth tree
+under the root of the deeper tree and the path compression technique to flatten the tree when find() is called.
+Using the Dijkstra's Algorithm, I generated the shortest path tree with a given source as a root. I then
+maintained two sets, one set containing vertices included in the shortest-path tree and the
+other set containing vertices not yet included in the shortest-path tree. At every step of the algorithm,
+I find a vertex that is in the other set (set of not yet included) and has a minimum distance from the source.
+
+
+3. What is the complexity of your solution? Can it be improved?
+Answer:
+In the Kruskal’s algorithm, most time-consuming operation is sorting because the total complexity of the
+Disjoint-Set operations will be O(ElogV), which is the overall time Complexity of the algorithm.
+In the Dijkstra's Algorithm, the time complexity is O(V^2) but with minimum priority queue it drops down to O(V+ElogV).
